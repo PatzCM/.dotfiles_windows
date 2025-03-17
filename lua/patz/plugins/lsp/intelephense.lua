@@ -1,16 +1,18 @@
+-- lua/patz/plugins/lsp/intelephense.lua
 return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      -- @type lspconfig.options
       servers = {
         intelephense = {
-          filetypes = { "php", "blade", "php_only" },
+          setup = function()
+            require('lspconfig').intelephense.setup{}
+          end,
+          filetypes = { "php", "blade" },
           settings = {
             intelephense = {
-              filetypes = { "php", "blade", "php_only" },
               files = {
-                associations = { "*.php", "*.blade.php" }, -- Associating .blade.php files as well
+                associations = { "*.php", "*.blade.php" },
                 maxSize = 5000000,
               },
             },
