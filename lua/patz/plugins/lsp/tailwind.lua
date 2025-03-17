@@ -4,6 +4,9 @@ return {
     opts = {
       servers = {
         tailwindcss = {
+          setup = function()
+            require('lspconfig').tailwindcss.setup{}
+          end,
           settings = {
             tailwindCSS = {
               experimental = {
@@ -29,7 +32,7 @@ return {
   {
     "hrsh7th/nvim-cmp",
     optional = true,
-		dependencies = {
+    dependencies = {
       { "roobert/tailwindcss-colorizer-cmp.nvim", opts = {} },
     },
     opts = function(_, opts)
