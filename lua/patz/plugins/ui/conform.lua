@@ -60,4 +60,4 @@ return {
 			})
   end, { desc = "Make file or range PRETTY (v/n mode)" })
 
-}
+end
