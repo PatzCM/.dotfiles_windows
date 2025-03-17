@@ -16,13 +16,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   { import = 'patz.plugins'},
-  { import = 'patz.plugins.lsp'},
-  { import = 'patz.plugins.ui'},
-  { import = 'patz.plugins.edit'},
-  { import = 'patz.plugins.extra'},
-  { import = 'patz.plugins.nav'},
-  { import = 'patz.plugins.comp'},
-  { import = 'patz.plugins.ai'},
+  -- { import = 'patz.plugins.lsp'},
+  -- { import = 'patz.plugins.ui'},
+  -- { import = 'patz.plugins.edit'},
+  -- { import = 'patz.plugins.extra'},
+  -- { import = 'patz.plugins.nav'},
+  -- { import = 'patz.plugins.comp'},
+  -- { import = 'patz.plugins.ai'},
 }, {    
   install = { colorscheme = { "catppuccin" } },
   checker = {

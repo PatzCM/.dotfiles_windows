@@ -1,4 +1,5 @@
 -- lua/patz/plugins/lsp/intelephense.lua
+
 return {
   {
     "neovim/nvim-lspconfig",
