@@ -23,7 +23,7 @@ require("lazy").setup({
   { import = 'patz.plugins.nav'},
   { import = 'patz.plugins.comp'},
   { import = 'patz.plugins.ai'},
-},    
+}, {    
   install = { colorscheme = { "catppuccin" } },
   checker = {
     enabled = true,
