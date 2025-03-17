@@ -15,7 +15,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { import = 'patz.plugins' },
+  { import = 'patz.plugins'},
   { import = 'patz.plugins.lsp'},
   { import = 'patz.plugins.ui'},
   { import = 'patz.plugins.edit'},

@@ -78,7 +78,7 @@ vim.opt.spelllang = 'pt,en'
 opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+-- opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
 -- Search

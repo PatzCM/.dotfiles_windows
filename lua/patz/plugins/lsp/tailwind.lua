@@ -28,8 +28,9 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-      { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+    optional = true,
+		dependencies = {
+      { "roobert/tailwindcss-colorizer-cmp.nvim", opts = {} },
     },
     opts = function(_, opts)
       -- original LazyVim kind icon formatter
