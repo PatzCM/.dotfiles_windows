@@ -1,31 +1,31 @@
 -- local util = require("conform.util")
 return {
   "stevearc/conform.nvim",
-	event = { "BufReadPre", "BufNewFile" },
-	config = function()
-    local conform = require("conform")
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+  local conform = require("conform")
 		---@type conform.setupOpts
       
-    conform.setup({
-			formatters_by_ft = {
-        lua = { "stylua" },
-        fish = { "fish_indent" },
-        sh = { "shfmt" },
-        php = { "pint" },
-        blade = { "blade-formatter", "rustywind" },
-        python = { "black" },
-        javascript = { "prettierd" },
+  conform.setup({
+				formatters_by_ft = {
+      lua = { "stylua" },
+      fish = { "fish_indent" },
+      sh = { "shfmt" },
+      php = { "pint" },
+			blade = { "blade-formatter", "rustywind" },
+      python = { "black" },
+      javascript = { "prettierd" },
         -- rust = { "rustfmt" },
-      },
+    },
       -- LazyVim will merge the options you set here with builtin formatters.
       -- You can also define any custom formatters here.
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
-      default_format_opts = {
-        lsp_format = "fallback", -- not recommended to change
-			},
+    default_format_opts = {
+       lsp_format = "fallback", -- not recommended to change
+						},
 
-			formatters = {
-        injected = { options = { ignore_errors = true } },
+						formatters = {
+      injected = { options = { ignore_errors = true } },
         -- # Example of using dprint only when a dprint.json file is present
         -- dprint = {
         --   condition = function(ctx)
@@ -53,11 +53,12 @@ return {
     })
 
     vim.keymap.set({"n", "v"}, "<leader>pf", function ()
-			conform.format({
-				lsp_fallback = true,
-				async = true,
-				timeout_ms = 500,
+				conform.format({
+					lsp_fallback = true,
+					async = true,
+					timeout_ms = 500,
 			})
   end, { desc = "Make file or range PRETTY (v/n mode)" })
 
 end
+}
