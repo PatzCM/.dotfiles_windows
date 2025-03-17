@@ -1,16 +1,13 @@
-local util = require("conform.util")
+-- local util = require("conform.util")
 return {
   "stevearc/conform.nvim",
-  opts = function()
-    ---@type conform.setupOpts
-    local opts = {
-      default_format_opts = {
-        timeout_ms = 3000,
-        async = false, -- not recommended to change
-        quiet = false, -- not recommended to change
-        lsp_format = "fallback", -- not recommended to change
-      },
-      formatters_by_ft = {
+	event = { "BufReadPre", "BufNewFile" },
+	config = function()
+    local conform = require("conform")
+		---@type conform.setupOpts
+      
+    conform.setup({
+			formatters_by_ft = {
         lua = { "stylua" },
         fish = { "fish_indent" },
         sh = { "shfmt" },
@@ -23,7 +20,11 @@ return {
       -- LazyVim will merge the options you set here with builtin formatters.
       -- You can also define any custom formatters here.
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
-      formatters = {
+      default_format_opts = {
+        lsp_format = "fallback", -- not recommended to change
+			},
+
+			formatters = {
         injected = { options = { ignore_errors = true } },
         -- # Example of using dprint only when a dprint.json file is present
         -- dprint = {
@@ -49,7 +50,14 @@ return {
           stdin = false,
         },
       },
-    }
-    return opts
-  end,
+    })
+
+    vim.keymap.set({"n", "v"}, "<leader>pf", function ()
+			conform.format({
+				lsp_fallback = true,
+				async = true,
+				timeout_ms = 500,
+			})
+  end, { desc = "Make file or range PRETTY (v/n mode)" })
+
 }
