@@ -16,14 +16,13 @@ return {
           "eslint",
           "intelephense",
           "tailwindcss",
-					"rome",
-				}
-      })
-    end
+	  "rome",
+  }
+  })
+  end
   },
-
-	{
-		"neovim/nvim-lspconfig",
+  {
+	  "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require('lspconfig')
 

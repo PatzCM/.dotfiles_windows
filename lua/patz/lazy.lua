@@ -26,7 +26,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{"williamboman/mason.nvim", config = true},
   {"williamboman/mason-lspconfig.nvim", config = true },
-  {"neovim/nvim-lspconfig", config = function() require("patz.plugins.lsp.lsp-config")() end},
+  {"neovim/nvim-lspconfig", config = function() require("patz.plugins.lsp.lsp-config") end},
 	{ import = 'patz.plugins'},
   { import = 'patz.plugins.lsp'},
 	{ import = 'patz.plugins.ui'},
