@@ -240,7 +240,6 @@ keymap.set("n", "<leader>pl",
 keymap.set("n", "<leader>sp", ":PetsNew Z", { desc = "Summon Pet" })
 keymap.set("n", "<leader>scp", ":PetsNewCustom slime green Z", { desc = "Summon Custom Pet" })
 keymap.set("n", "<leader>kp", ":PetsKill Z", { desc = "Kill Pet" })
-
 -- Hardtime
 local function toggle_hardmode()
   require("hardtime").toggle()

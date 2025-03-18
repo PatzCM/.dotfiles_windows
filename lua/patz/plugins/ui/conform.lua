@@ -37,21 +37,21 @@ return {
         -- shfmt = {
         --   extra_args = { "-i", "2", "-ci" },
         -- },
-        pint = {
-          meta = {
-            url = "https://github.com/laravel/pint",
-            description = "Laravel Pint is an opinionated PHP code style fixer for minimalists. Pint is built on top of PHP-CS-Fixer and makes it simple to ensure that your code style stays clean and consistent.",
-          },
-          command = util.find_executable({
-            vim.fn.stdpath("data") .. "/mason/bin/pint",
-            "vendor/bin/pint",
-          }, "pint"),
-          args = { "$FILENAME" },
-          stdin = false,
-        },
-      },
-    })
-
+    --     pint = {
+    --       meta = {
+    --         url = "https://github.com/laravel/pint",
+    --         description = "Laravel Pint is an opinionated PHP code style fixer for minimalists. Pint is built on top of PHP-CS-Fixer and makes it simple to ensure that your code style stays clean and consistent.",
+    --       },
+    --       command = util.find_executable({
+    --         vim.fn.stdpath("data") .. "/mason/bin/pint",
+    --         "vendor/bin/pint",
+    --       }, "pint"),
+    --       args = { "$FILENAME" },
+    --       stdin = false,
+    --     },
+    --   },
+    -- })
+    --
     vim.keymap.set({"n", "v"}, "<leader>pf", function ()
 				conform.format({
 					lsp_fallback = true,
@@ -59,6 +59,7 @@ return {
 					timeout_ms = 500,
 			})
   end, { desc = "Make file or range PRETTY (v/n mode)" })
-
-end
 }
+})
+end }
+
